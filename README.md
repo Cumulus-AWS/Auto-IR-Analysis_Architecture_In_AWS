@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="Image/Architecture.png" width="1000" height="1000">
+    <img src="Image/Architecture.png" width="532" height="492">
   </a>
 
   <h3 align="center">AWS 환경에서 침해사고분석을 위한 자동화 아키텍쳐 구성</h3>
