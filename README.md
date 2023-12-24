@@ -37,22 +37,23 @@
 
 ## 프로젝트 개요
 ### 팀원 소개
+
+*멘토단 - 밝혀도 되는지 모르겠음 암튼
+| Name | Description |
+| --- | --- |
+| OOO | 멘토 |
+| OOO | PL |
+
+*Team.Cumulus
 | Name | Description |
 | --- | --- |
 | 신우빈 (PM) | - |
+| [박선하](https://github.com/waaterr1208) | - |
 | [박천웅](https://github.com/CheonWoong-Park) | - |
-| [박선하] | - |
-| [박현재] | - |
-| [박희진] | - |
-| [봉승종] | 塞翁之馬 |
-| [신성훈] | ソコマデダ |
-신우빈(PM)
-킹갓천웅(일천억웅)
-박선하()
-박현재()
-박희진()
-봉승종(塞翁之馬)
-신성훈(ソコマデダ)
+| [박현재](https://github.com/park1NG) | - |
+| [박희진](https://github.com/gmlwlsdl) | - |
+| [봉승종](https://github.com/bongjong1121) | 塞翁之馬 |
+| [신성훈](https://github.com/bipidus513) | ソコマデダ |
 
 ### 프로젝트 필요성
 1. AWS 침해사고 증가
