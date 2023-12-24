@@ -7,7 +7,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">AWS 환경에서 침해사고분석을 위한 자동화 아키텍쳐 구성</h3>
 
   <p align="center">
     본 프로젝트는 화이트햇 스쿨 1기 뭐시깽이에서 진행된 프로젝트입니다.
