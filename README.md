@@ -1,17 +1,52 @@
 # Auto-IR-Analysis_Architecture_In_AWS
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    본 프로젝트는 화이트햇 스쿨 1기 뭐시깽이에서 진행된 프로젝트입니다.
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</div>
+
 ## Index
-  - [Overview](#overview) 
-  - [Getting Started](#getting-started)
-  - [Contributing](#contributing)
-  - [Authors](#authors)
-  - [License](#license)
+
+- [프로젝트 개요](#프로젝트-개요)
+  - [팀원 소개](#팀원-소개)
+  - [프로젝트 필요성](#프로젝트-필요성)
+      
+- [서버 인프라 구축](#서버-인프라-구축)
+    
+- [Contributing](#contributing)
+    
+- [Authors](#authors)
+- [License](#license)
 
 ## 프로젝트 개요
 
-## 아키텍쳐
+### 팀원 소개
 
-## log4j구축
+### 프로젝트 필요성
+
+## 서버 인프라 구축
+
+## 아티팩트 채증 자동화
+
+## 아티팩트 분석 자동화
 
 취약 자바 설치 :
 
