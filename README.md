@@ -3,16 +3,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  [![Product Name Screen Shot][product-screenshot]](https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS)
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="Image/Architecture.png" width="532" height="492">
   </a>
 
   <h3 align="center">AWS 환경에서 침해사고분석을 위한 자동화 아키텍쳐 구성</h3>
+  <br />
+  <h4 align="center"> 본 프로젝트는 화이트햇 스쿨 1기(이하, Pre-BOB)에서 진행된 프로젝트입니다.</h4>
+  <br />
 
   <p align="center">
-    본 프로젝트는 화이트햇 스쿨 1기 뭐시깽이에서 진행된 프로젝트입니다.
+    안전한 보안 아키텍쳐를 구축하러더라도, 프레임워크 취약점으로부터 발생할 수 있는 침해사고시
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    빠른 분석과 대응을 위해 자동화 아키텍쳐를 구성한 것이며, 수집된 아티팩트는 법적 효력이 없음을 밝힙니다.
+    <br />
+    <br />
+    <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS"><strong>홈으로 돌아가기</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
@@ -35,17 +42,22 @@
 
 - [아티팩트 분석_자동화](#아티팩트-분석-자동화)
 
+<br />
+<br />
+
 ## 프로젝트 개요
 ### 팀원 소개
+<br />
 
-*멘토단 - 밝혀도 되는지 모르겠음 암튼
-| Name | Description |
+**멘토단 - 밝혀도 되나?**
+| 멘토단 | 역할 |
 | --- | --- |
 | OOO | 멘토 |
 | OOO | PL |
+<br />
 
-*Team.Cumulus
-| Name | Description |
+**큐물러스**
+| 이름 | 한줄소개 |
 | --- | --- |
 | 신우빈 (PM) | - |
 | [박선하](https://github.com/waaterr1208) | - |
@@ -54,6 +66,7 @@
 | [박희진](https://github.com/gmlwlsdl) | - |
 | [봉승종](https://github.com/bongjong1121) | 塞翁之馬 |
 | [신성훈](https://github.com/bipidus513) | ソコマデダ |
+<br />
 
 ### 프로젝트 필요성
 1. AWS 침해사고 증가
