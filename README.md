@@ -101,7 +101,7 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 
 ### 사용한 AWS 서비스
 1. VPC
-![image info](Image/VPC.png)
+<img src="WAF/VPC.png" alt="image info" width="50%" height="50%">
     * 사용자가 정의한 가상 네트워크에서 AWS 리소스를 시작할 수 있도록 하는 서비스<br />
 1. EC2
     * ~~<br />
