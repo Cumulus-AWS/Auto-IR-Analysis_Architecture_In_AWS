@@ -109,7 +109,7 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 1. EC2 오토스케일링
     * 사용자가 지정한 규칙에 따라 EC2 인스턴스 수를 자동으로 조정하는 서비스<br />
 1. ALB
-![image info](Image/ALB.png)
+<br />![image info](Image/ALB.png)
     * 애플리케이션 트래픽을 여러 대의 EC2 인스턴스 등에 자동으로 분산<br />
 1. WAF 로깅
     * WAF에 의해 감시된 웹 트래픽 정보 기록<br />
