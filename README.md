@@ -101,10 +101,8 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 
 ### 사용한 AWS 서비스
 1. VPC
+![image info](Image/VPC.png)
     * 사용자가 정의한 가상 네트워크에서 AWS 리소스를 시작할 수 있도록 하는 서비스<br />
-   <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Image/VPC.png">
-    <img src="Image/VPC.png" width="200" height="100">
-  </a>
 1. EC2
     * ~~<br />
 1. S3
@@ -112,8 +110,10 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 1. EC2 오토스케일링
     * 사용자가 지정한 규칙에 따라 EC2 인스턴스 수를 자동으로 조정하는 서비스<br />
 1. ALB
+![image info](Image/ALB.png)
     * 애플리케이션 트래픽을 여러 대의 EC2 인스턴스 등에 자동으로 분산<br />
 1. WAF 로깅
+![image info](WAF/ALB.png)
     * WAF에 의해 감시된 웹 트래픽 정보 기록<br />
 1. GuardDuty
     * AWS 리소스 "ex.EC2"에 대한 위험탐지 서비스<br />
