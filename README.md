@@ -100,29 +100,29 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 ## AWS 서비스 및 사용 기술
 
 ### 사용한 AWS 서비스
-VPC
+1. VPC
     * 사용자가 정의한 가상 네트워크에서 AWS 리소스를 시작할 수 있도록 하는 서비스<br />
-EC2
+1. EC2
     * ~~<br />
-S3
+1. S3
     * ~~<br />
-EC2 오토스케일링
+1. EC2 오토스케일링
     * 사용자가 지정한 규칙에 따라 EC2 인스턴스 수를 자동으로 조정하는 서비스<br />
-ALB
+1. ALB
     * 애플리케이션 트래픽을 여러 대의 EC2 인스턴스 등에 자동으로 분산<br />
-WAF 로깅
+1. WAF 로깅
     * WAF에 의해 감시된 웹 트래픽 정보 기록<br />
-GuardDuty
+1. GuardDuty
     * AWS 리소스 "ex.EC2"에 대한 위험탐지 서비스<br />
-Lamda
+1. Lamda
     * 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행함, 자동화 작업 수행에 이용<br />
-Step Function
+1. Step Function
     * Serverless 오케스트레이션 서비스<br />
-Route 53
+1. Route 53
     * 도메인 이름을 관리하고 애플리케이션을 연결<br />
-CloudWatch
+1. CloudWatch
     *  AWS 리소스 및 애플리케이션의 모니터링과 로깅 서비스, 성능 지표를 추적하고 이벤트에 대응<br />
-SSM
+1. SSM
     * EC2 인스턴스 및 환경을 관리하기 위한 서비스, 자동화 및 운영 작업을 수행<br />
 
 ### 기술 스택
