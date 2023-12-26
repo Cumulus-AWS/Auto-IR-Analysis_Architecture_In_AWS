@@ -113,7 +113,7 @@ Capital one 사건은 AWS 클라우드 환경에서 발생한 침해사고로, �
 ![image info](Image/ALB.png)
     * 애플리케이션 트래픽을 여러 대의 EC2 인스턴스 등에 자동으로 분산<br />
 1. WAF 로깅
-![image info](WAF/ALB.png)
+<img src="WAF/ALB.png" alt="image info" width="50%" height="50%">
     * WAF에 의해 감시된 웹 트래픽 정보 기록<br />
 1. GuardDuty
     * AWS 리소스 "ex.EC2"에 대한 위험탐지 서비스<br />
