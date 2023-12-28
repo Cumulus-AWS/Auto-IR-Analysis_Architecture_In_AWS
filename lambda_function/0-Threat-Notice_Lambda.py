@@ -1,42 +1,49 @@
 import requests
 import json
 
-#대상이 Ec2가 아니라 포렌식은 작동하지않지만, 위험도는 충분히 높음
 def lambda_handler(event, context):
-    url = "https://discord.com/api/webhooks/1181582241265107074/hURSQ-Q-SN27CB-whxYkjS-qDBY0PuF8zWIELtlJMEi1xOwnL8pVqJOM1OcI830O7TVP"
+    # Discord Webhook URL for sending messages
+    url = "your-Webhook-URL"
 
+    # Set default avatar and username for the Discord message
     data = {
-    "avatar_url": "https://i.ibb.co/pjyz7qF/angr-Y-cumulus.png",
-    "username" : "Cumulus AWS Guard-Duty",
+        "avatar_url": "your-avatar-URL",
+        "username": "Cumulus AWS Guard-Duty",
     }
     
+    # Extract the FindingID from the AWS CloudWatch event
     FindingID = event["detail"]["id"]
 
+    # Create Discord message payload with embedded content
     data["embeds"] = [
         {
             "title": "**high-level severity has been detected.**",
             "description": (
                 "\n\n"
+                # Displaying details of the AWS GuardDuty finding
                 "* Type : " + event["detail"]["type"] + "\n\n"
                 "* Title : " + event["detail"]["title"] + "\n\n"
                 "* Severity : " + str(event["detail"]["severity"]) + "\n\n"
                 "* Description : " + event["detail"]["description"] + "\n\n"
+                # Include a link to the AWS GuardDuty console for more details
                 f"* Link : [AWS GuardDuty](https://ap-northeast-2.console.aws.amazon.com/guardduty/home?region=ap-northeast-2#/findings?macros=current&fId={FindingID})"
             )
         }
     ]
 
+    # Send the Discord message using the Webhook URL
     result = requests.post(url, json=data)
     
     try:
         result.raise_for_status()
     except requests.exceptions.HTTPError as err:
+        # Handle HTTP error if the message delivery fails
         return {
-        'statusCode': 400,
+            'statusCode': 400,
         }
     else:
+        # Return a success response if the message is delivered successfully
         return {
-        'statusCode': 200,
-        'body': json.dumps("Payload delivered successfully, code {}.".format(result.status_code))
+            'statusCode': 200,
+            'body': json.dumps("Payload delivered successfully, code {}.".format(result.status_code))
         }
-
