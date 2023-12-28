@@ -133,6 +133,41 @@ WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kine
 
 ### 아티팩트 채증 자동화
 
+aws client 설치 : 
+
+```sh
+yum -y install unzip && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install;
+```
+
+lime 메모리 모듈 설치 :
+
+```sh
+aws s3 cp s3://cumulus-sec-data/memory-modules/lime-5.10.199-190.747.amzn2.x86_64.ko /tmp/lime.ko
+sudo insmod /tmp/lime.ko "path=tcp:4444 format=lime localhostonly=1"'
+```
+
+침해사고 탐지 시 휘발성 데이터 수집 :
+
+```sh
+export MEMSIZE=$(awk \'/MemTotal/ {print $2/1024/1024}\' /proc/meminfo)
+
+export AWS_ACCESS_KEY_ID={}.format(restricted_s3_credentials['AccessKeyId'])
+
+export AWS_SECRET_ACCESS_KEY={}.format(restricted_s3_credentials['SecretAccessKey'])
+
+export AWS_DEFAULT_REGION=ap-northeast-2
+
+aws configure set default.s3.max_concurrent_requests 20
+```
+
+수집한 데이터를 s3로 전송 : 
+
+```sh
+cat < /dev/tcp/127.0.0.1/4444 | {0}.format(s3_upload_command)
+
+rmmod lime.ko
+```
+
 ### 아티팩트 분석 자동화
 
 취약 자바 설치 :
