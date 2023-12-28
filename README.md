@@ -3,7 +3,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  [![Product Name Screen Shot][product-screenshot]](https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS)
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="Image/Architecture.png" width="532" height="492">
   </a>
