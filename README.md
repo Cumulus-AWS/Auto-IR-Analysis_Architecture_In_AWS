@@ -143,121 +143,34 @@ WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kine
 ### C. 분석 자동화
 (내용)
 
-### Workflow
-(내용)
+## 운영 
+본 시나리오에서는 WAF, 보안 그룹, NAT Gateway 등과 같은 보안 서비스들이 실행되고 있음에도 불구하고, 프레임워크 취약점은 이러한 보호 장치들을 회피할 수 있음을 드러낸다. 본 시나리오를 통해서 구축한 침해 사고 대응 자동화 프로세스가 어떻게 효과적으로 대응할 수 있는지 확인할 수 있다. 
+### 공격 시나리오 
+EC2에서 작동 중인 Apache Tomcat 서버는 사용자 인증을 위한 로그인 인터페이스를 제공하고, 
+공격자는 인터페이스의 ID 입력란에 `${jndi:~}` 형태의 악성 코드를 삽입하여 공격을 개시한다. 
+보간 구문을 이용한 이 공격은 서버의 로깅 과정을 악용하여 JNDI를 사용, 공격자의 원격 서버와의 연결을 설정하고 원하는 코드를 실행한다. 
 
-## 운영
-### Scripts
+공격자는 이 방법을 통해 서버에 리버스 쉘을 설치한다. 
 
-### 아티팩트 채증 자동화
-
-aws client 설치 : 
-
-```sh
-yum -y install unzip && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install;
-```
-
-lime 메모리 모듈 설치 :
-
-```sh
-aws s3 cp s3://cumulus-sec-data/memory-modules/lime-5.10.199-190.747.amzn2.x86_64.ko /tmp/lime.ko
-sudo insmod /tmp/lime.ko "path=tcp:4444 format=lime localhostonly=1"'
-```
-
-침해사고 탐지 시 휘발성 데이터 수집 :
-
-```sh
-export MEMSIZE=$(awk \'/MemTotal/ {print $2/1024/1024}\' /proc/meminfo)
-
-export AWS_ACCESS_KEY_ID={}.format(restricted_s3_credentials['AccessKeyId'])
-
-export AWS_SECRET_ACCESS_KEY={}.format(restricted_s3_credentials['SecretAccessKey'])
-
-export AWS_DEFAULT_REGION=ap-northeast-2
-
-aws configure set default.s3.max_concurrent_requests 20
-```
-
-수집한 데이터를 s3로 전송 : 
-
-```sh
-cat < /dev/tcp/127.0.0.1/4444 | {0}.format(s3_upload_command)
-
-rmmod lime.ko
-```
-
-### 아티팩트 분석 자동화
-
-취약 자바 설치 :
-
-```sh
-curl -L -b "oraclelicense=accept-securebackup-cookie" -O https://download.oracle.com/otn/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
-
-tar -zxvf jdk-8u20-linux-x64.tar.gz
-
-cd jdk1.8.0_20
-
-export JAVA_HOME=$(pwd)
-
-export PATH=$PATH:$JAVA_HOME/bin
-
-echo 'export JAVA_HOME=$(pwd)' >> ~/.bashrc
-echo 'export PATH=$PATH:$JAVA_HOME/bin' >> ~/.bashrc
-source ~/.bashrc
-
-java -version
-```
-
-톰캣설치:
-
-```sh
-wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz
-
-tar -xzvf apache-tomcat-8.0.36.tar.gz
-
-cd apache-tomcat-8.0.36
-
-앱 뭐시꺵이에 ROOT로 이름 바꿔서 war넣고 
-
-cd bin
-
-./catalina.sh run
-```
-
-## AWS 서비스 및 사용 기술
-
-### 사용한 AWS 서비스
-1. VPC
-    * 사용자가 정의한 가상 네트워크에서 AWS 리소스를 시작할 수 있도록 하는 서비스<br />
-1. EC2
-    *  사용자가 정의한 가상 네트워크에서 가상 서버(인스턴스)를 프로비저닝하고 실행할 수 있게 해주는 서비스<br />
-1. S3
-    * 데이터를 저장하고 검색할 수 있는 안전하고 확장 가능한 클라우드 스토리지를 제공해주는 객체 스토리지 서비스<br />
-1. EC2 오토스케일링
-    * 사용자가 지정한 규칙에 따라 EC2 인스턴스 수를 자동으로 조정하는 서비스<br />
-1. ALB
-<br />![image info](Image/ALB.png)
-    * 애플리케이션 트래픽을 여러 대의 EC2 인스턴스 등에 자동으로 분산시켜주는 서비스<br />
-1. WAF 로깅
-    * WAF에 의해 감시된 웹 트래픽 정보 기록하는 서비스<br />
-1. GuardDuty
-    * AWS 리소스 "ex.EC2"에 대한 위험탐지 서비스<br />
-1. Lamda
-    * 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행함, 자동화 작업 수행에 이용<br />
-1. Step Function
-    * Serverless 오케스트레이션 서비스<br />
-1. Route 53
-    * 도메인 이름을 관리하고 애플리케이션을 연결<br />
-1. CloudWatch
-    *  AWS 리소스 및 애플리케이션의 모니터링과 로깅 서비스, 성능 지표를 추적하고 이벤트에 대응<br />
-1. SSM
-    * EC2 인스턴스 및 환경을 관리하기 위한 서비스, 자동화 및 운영 작업을 수행<br />
-
-### 기술 스택
-1. [LiME](https://github.com/504ensicsLabs/LiME)</br>
-리눅스 시스템에서 메모리 덤프를 추출하는 도구
-2. Volatility</br>
-메모리 포렌식 분석 도구로 다양한 운영 체제에서 메모리 덤프를 분석하는 도구
+### 침해사고 대응 프로세스 
+침해사고가 발생한 후, 아키텍처에서 정의된 대응 프로세스는 다음과 같이 작동한다. 
+- **GuardDuty 탐지**  
+  GuardDuty가 의심스러운 활동을 감지하고, 발생한 이벤트가 인스턴스 관련 이벤트인지 확인한다.
+  
+- **StepFunctions 활성화**  
+  인스턴스 이벤트라면, StepFunctions 워크플로우가 활성화되어 자동화된 대응 조치를 시작한다.
+  
+  - **Discord 알람 전송**  
+    침해사고가 발생했음을 알리는 알람을 Discord로 전송한다.
+    
+  - **Artifact 채증**  
+    Memory Artifact와 Command Artifact를 채증한다.
+    
+  - **SnapShot 생성 및 인스턴스 격리**  
+    비휘발성 데이터를 분석하기 위해 인스턴스의 스냅샷을 생성하고, 피해 확산을 방지하기 위해 해당 인스턴스를 네트워크적으로 격리한다.
+    
+- **분석 및 조사**  
+  채집된 정보는 Analysis VPC 내에서 분석된다. 
 
 ## 표 + 사진 방법 1
 
