@@ -69,7 +69,7 @@
 | 이름 | 한줄소개 |
 | --- | --- |
 | 신우빈 (PM) | - |
-| [박선하](https://github.com/waaterr1208) | - |
+| [박선하](https://github.com/waaterr1208) | (활력 감소) |
 | [박천웅](https://github.com/CheonWoong-Park) | - |
 | [박현재](https://github.com/park1NG) | - |
 | [박희진](https://github.com/gmlwlsdl) | - |
@@ -110,6 +110,10 @@ AWS를 대상으로 한 침해사고의 수와 파급력이 증가하고 있다.
 ### 아키텍처 설계
 아래에 아키텍처에 대해 자세히 설명하고 있다.
 #### A. Server_VPC
+<p align="center">
+  <img src="Image/Server_VPC.drawio.png" alt="Server_VPC 구조도">
+</p>
+
 프로젝트에서 가정된 서비스 환경은 Server_VPC를 통해 구현한다. Server_VPC는 두 개의 리전 위에 Public, Private Subnet 각각 1개씩으로 구성된다.
 - **Public Subnet**  
 Public Subnet은 인터넷 환경에서 접근 가능한 Subnet으로 ALB를 통해 트래픽이 Public Subnet의 노드로 전송되고 Public Subnet을 거쳐 Private Subnet에 위치하는 웹 서버로 전송된다. 또한 바스티온 EC2가 위치하여 개발자가 웹 서버에 접근할 수 있게 한다.
