@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a>
     <img src="Image/Architecture.png" width="532" height="492">
   </a>
 
@@ -39,9 +39,11 @@
       B. [채증 자동화](#b-채증-자동화)  
       C. [분석 자동화](#C-분석-자동화)  
 
-- [실제-운영]
-  - [시나리오]
-  - [시나리오를 통해 도출한 실제 예시]
+- [운영](#운영)
+  - [공격 시나리오](#공격-시나리오)
+  - [침해사고 대응 프로세스](#침해사고-대응-프로세스)
+  - [분석]
+  - [결과 도출]
      
 - [AWS 서비스 및 사용 기술](#AWS-서비스-및-사용-기술)
   - [사용한 AWS 서비스](#사용한-AWS-서비스)
