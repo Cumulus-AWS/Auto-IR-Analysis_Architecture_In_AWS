@@ -108,7 +108,7 @@ AWS를 대상으로 한 침해사고의 수와 파급력이 증가하고 있다.
 아래에 아키텍처에 대해 자세히 설명하고 있다.
 #### A. Server_VPC
 <p align="center">
-  <img src="Image/Server_VPC.drawio.png" alt="Server_VPC 구조도">
+  <img src="Image/server_vpc_ver.2.drawio.png" alt="Server_VPC 구조도">
 </p>
 
 프로젝트에서 가정된 서비스 환경은 Server_VPC를 통해 구현한다. Server_VPC는 두 개의 리전 위에 Public, Private Subnet 각각 1개씩으로 구성된다.
