@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="Image/Architecture.png" width="532" height="492">
+    <img src="Image/Architecture_1.png" width="532" height="492">
   </a>
 
   <h3 align="center">AWS 환경에서 침해사고분석을 위한 자동화 아키텍쳐 구성</h3>
