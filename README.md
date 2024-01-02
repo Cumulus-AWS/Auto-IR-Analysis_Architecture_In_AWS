@@ -155,6 +155,7 @@ EC2에서 작동 중인 Apache Tomcat 서버는 사용자 인증을 위한 로�
   
 ## 참고자료  
 취약 서버 구축 : https://velog.io/@isang/CVE-2021-44228log4shell-취약점-POC-실습
+
 침해사고 Cheat-Sheet : https://github.com/vm32/Linux-Incident-Response
                       https://github.com/meirwah/awesome-incident-response
                       https://github.com/carlospolop/hacktricks/blob/master/forensics/basic-forensic-methodology/malware-analysis.md
