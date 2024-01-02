@@ -42,7 +42,7 @@
 | --- | --- |
 | 신우빈 (PM) | - |
 | [박선하](https://github.com/waaterr1208) | (활력 감소) |
-| [박천웅](https://github.com/CheonWoong-Park) | - |
+| [박천웅](https://github.com/CheonWoong-Park) | 어쩌다보니 노예 |
 | [박현재](https://github.com/park1NG) | - |
 | [박희진](https://github.com/gmlwlsdl) | - |
 | [봉승종](https://github.com/bongjong1121) | 塞翁之馬 |
