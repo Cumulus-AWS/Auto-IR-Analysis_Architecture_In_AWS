@@ -89,7 +89,7 @@ AWS를 대상으로 한 침해사고의 수와 파급력이 증가하고 있다.
 아래에 아키텍처에 대해 자세히 설명하고 있다.
 #### A. Server_VPC
 <p align="center">
-  <img src="Image/server_vpc.png" alt="Server_VPC 구조도">
+  <img src="Image/server_vpc.png" alt="Server_VPC 구조도" width="600" height="auto">
 </p>
 
 프로젝트에서 가정된 서비스 환경은 Server_VPC를 통해 구현한다. Server_VPC는 두 개의 리전 위에 Public, Private Subnet 각각 1개씩으로 구성된다.
@@ -110,7 +110,7 @@ WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kine
 
 #### B. 채증 자동화
 <p align="center">
-  <img src="Image/Automated_Validation.png" alt="Server_VPC 구조도">
+  <img src="Image/Automated_Validation.png" alt="채증 자동화 아키텍쳐" width="600" height="auto">
 </p>
 
 **1. 네트워크 전이 방지를 위한 Ec2 격리**  
@@ -127,7 +127,7 @@ WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kine
 
 #### C. 분석 자동화
 <p align="center">
-  <img src="Image/Automated_Analysis.png" alt="Server_VPC 구조도">
+  <img src="Image/Automated_Analysis.png" alt="분석 자동화 아키텍쳐" width="600" height="auto">
 </p>
 
 (내용)
