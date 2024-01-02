@@ -151,26 +151,10 @@ EC2에서 작동 중인 Apache Tomcat 서버는 사용자 인증을 위한 로�
     비휘발성 데이터를 분석하기 위해 인스턴스의 스냅샷을 생성하고, 피해 확산을 방지하기 위해 해당 인스턴스를 네트워크적으로 격리한다.
     
 - **분석 및 조사**  
-  채집된 정보는 Analysis VPC 내에서 분석된다. 
-
-## 표 + 사진 방법 1
-
-| JavaScript | TypeScript |  React   |  Node   |
-| :--------: | :--------: | :------: | :-----: |
-|   ![js] 사진들어갈곳   |   ![ts]    | ![react] | ![node] |
-
-## 표 + 사진 방법 2
-
-| <img src="이미지경로" alt="이름" width="16px" height="16px" /> 이름 | <img src="https://user-images.githubusercontent.com/1215767/34348590-250b3ca2-ea4f-11e7-9efb-da953359321f.png" alt="IE" width="16px" height="16px" /> Internet Explorer | <img src="https://user-images.githubusercontent.com/1215767/34348380-93e77ae8-ea4d-11e7-8696-9a989ddbbbf5.png" alt="Edge" width="16px" height="16px" /> Edge | <img src="https://user-images.githubusercontent.com/1215767/34348394-a981f892-ea4d-11e7-9156-d128d58386b9.png" alt="Safari" width="16px" height="16px" /> Safari | <img src="https://user-images.githubusercontent.com/1215767/34348383-9e7ed492-ea4d-11e7-910c-03b39d52f496.png" alt="Firefox" width="16px" height="16px" /> Firefox |
-| :---------: | :---------: | :---------: | :---------: | :---------: |
-| Yes | 11+ | Yes | Yes | Yes |
-
-
-##
-[js]: /git 내 이미지 경로
-[ts]: /git 내 이미지 경로
-[react]: /git 내 이미지 경로
-[node]: /git 내 이미지 경로
-
+  채집된 정보는 Analysis VPC 내에서 분석된다.
+  
 ## 참고자료  
 취약 서버 구축 : https://velog.io/@isang/CVE-2021-44228log4shell-취약점-POC-실습
+침해사고 Cheat-Sheet : https://github.com/vm32/Linux-Incident-Response
+                      https://github.com/meirwah/awesome-incident-response
+                      https://github.com/carlospolop/hacktricks/blob/master/forensics/basic-forensic-methodology/malware-analysis.md
