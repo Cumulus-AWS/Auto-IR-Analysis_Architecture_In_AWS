@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="Image/Architecture_1.png">
+    <img src="Image/Architecture.png">
   </a>
 
   <h3 align="center">AWS 환경에서 침해사고분석을 위한 자동화 아키텍쳐 구성</h3>
@@ -89,7 +89,7 @@ AWS를 대상으로 한 침해사고의 수와 파급력이 증가하고 있다.
 아래에 아키텍처에 대해 자세히 설명하고 있다.
 #### A. Server_VPC
 <p align="center">
-  <img src="Image/server_vpc_ver.2.drawio.png" alt="Server_VPC 구조도">
+  <img src="Image/server_vpc.png" alt="Server_VPC 구조도">
 </p>
 
 프로젝트에서 가정된 서비스 환경은 Server_VPC를 통해 구현한다. Server_VPC는 두 개의 리전 위에 Public, Private Subnet 각각 1개씩으로 구성된다.
@@ -109,6 +109,9 @@ GuardDuty 서비스를 사용해서 위협 탐지 시스템을 구축했다. 이
 WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kinesis Firehose에서 WAF 로그를 수신하고 S3로 전달한다. WAF 로그를 통해 침해사고에 대한 모니터링과 분석 작업을 수행할 수 있다.
 
 #### B. 채증 자동화
+<p align="center">
+  <img src="Image/Automated_Validation.png" alt="Server_VPC 구조도">
+</p>
 
 **1. 네트워크 전이 방지를 위한 Ec2 격리**  
 람다를 이용해서 인바운드 및 아웃바운드가 차단된 보안 그룹으로 침해 사고가 발생한 Ec2를 서버로부터 격리 할 수 있도록 한다. 이를 위해서 먼저 인바운드 및 아웃바운드 트래픽을 차단할 보안 그룹을 생성한다. EC2 인스턴스에서 침해 사고가 발생하는 경우 이를 감지하여 람다 함수를 트리거한다. 새로 생성한 보안 그룹으로 변경될 시 침해 사고가 발생한 EC2 인스턴스는 격리되어 더 이상 네트워크 통신을 할 수 없게 되고 추가 공격이 이루어지지 않게 된다.
@@ -123,6 +126,10 @@ WAF를 통해 웹 서버로 전달된 웹 트래픽 정보를 기록한다. Kine
 채증한 휘발성 및 비휘발성 아티팩트들을 S3 버킷에 아카이빙하여 분석 VPC에서 사용할 수 있도록 해야 한다. 이를 위해 채증할 아티팩트를 쌓아 둘 S3 버킷을 생성하고 AWS CLI 명령어를 통해 해당 S3로 전송되도록 설정한다. S3에 쌓인 아티팩트들을 분석 VPC에서 사용할 수 있도록 IAM Role을 통한 액세스 권한을 설정하고 VPC 엔드포인트를 설정한다. 해당 과정에서 S3 Gateway 엔드포인트가 생성되고, 분석 VPC 보안 그룹의 아웃바운드는 S3 서비스만을 대상으로 운용한다.
 
 #### C. 분석 자동화
+<p align="center">
+  <img src="Image/Automated_Analysis.png" alt="Server_VPC 구조도">
+</p>
+
 (내용)
 
 ## 운영 
