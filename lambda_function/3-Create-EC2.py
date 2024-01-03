@@ -35,6 +35,10 @@ def lambda_handler(event, context):
     #volume 생성
     new_volume_ids = []
     for snapshot_id in ebs_snapshot_ids:
+                
+        waiter = ec2_client.get_waiter('snapshot_completed')
+        waiter.wait(SnapshotIds=[snapshot_id], WaiterConfig={'Delay': 10, 'MaxAttempts': 25})
+        
         response = ec2_client.create_volume(SnapshotId=snapshot_id, AvailabilityZone='ap-northeast-2a')
         new_volume_id = response['VolumeId']
         new_volume_ids.append(new_volume_id)
