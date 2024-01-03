@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     
     instance = event["detail"]["resource"]["instanceDetails"]["instanceId"]
     
-    IR_instance = 'your-instance-ID'
+    IR_instance = 'your-Analysis-EC2-ID'
     
     utc_datetime = datetime.strptime(event["detail"]["createdAt"], "%Y-%m-%dT%H:%M:%S.%fZ")
     korean_datetime = utc_datetime + timedelta(hours=9)
@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     
     ami_name = f'{instance}_ami_{time}'
     
-    #ami_id 추출
+    #extract ami_id 
     ec2_client = boto3.client('ec2')
     response = ec2_client.describe_images(Filters=[{'Name': 'name', 'Values': [ami_name]}])
     
@@ -26,13 +26,13 @@ def lambda_handler(event, context):
     response = ec2_client.describe_images(ImageIds=[ami_id])
     block_device_mappings = response['Images'][0]['BlockDeviceMappings']
     
-    #snapshot_id 추출
+    #extract snapshot_id 
     ebs_snapshot_ids = []
     for mapping in block_device_mappings:
         if 'Ebs' in mapping and 'SnapshotId' in mapping['Ebs']:
             ebs_snapshot_ids.append(mapping['Ebs']['SnapshotId'])
     
-    #volume 생성
+    #creat EBS volume 
     new_volume_ids = []
     for snapshot_id in ebs_snapshot_ids:
                 
@@ -46,7 +46,7 @@ def lambda_handler(event, context):
         waiter = ec2_client.get_waiter('volume_available')
         waiter.wait(VolumeIds=[new_volume_id], WaiterConfig={'Delay': 10, 'MaxAttempts': 25})
             
-    #volume 연결 
+    #bridge volume 
     index = 98
     for volume_id in new_volume_ids:
         
