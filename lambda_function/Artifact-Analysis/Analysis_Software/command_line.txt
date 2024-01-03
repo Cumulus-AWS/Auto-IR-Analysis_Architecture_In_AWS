@@ -1,0 +1,17 @@
+sudo cat /data/etc/crontab
+sudo cat /data/etc/group
+sudo cat /data/etc/sudoers
+sudo cat /data/var/log/messages
+sudo cat /data/var/log/secure
+sudo cat /data/var/log/boot.log
+sudo cat /data/var/log/kern.log
+sudo cat /data/var/log/dmesg
+sudo cat /data/var/log/faillog
+sudo cat /data/var/log/daemon.log
+sudo cat /data/var/log/btmp
+sudo cat /data/var/log/httpd
+sudo cat /data/var/log/mariadb/mariadb.log
+sudo cat /data/var/log/*
+sudo find /data -mtime -1 -ls
+sudo find /data -atime -1 -ls
+sudo find /data -nouser -print
