@@ -44,7 +44,7 @@
 | [박선하](https://github.com/waaterr1208) | (활력 감소) |
 | [박천웅](https://github.com/CheonWoong-Park) | 어쩌다보니 노예 |
 | [박현재](https://github.com/park1NG) | - |
-| [박희진](https://github.com/gmlwlsdl) | - |
+| [박희진](https://github.com/gmlwlsdl) | 쥬크박스 |
 | [봉승종](https://github.com/bongjong1121) | 塞翁之馬 |
 | [신성훈](https://github.com/bipidus513) | ソコマデダ |
 <br />
@@ -179,6 +179,17 @@ EC2에서 작동 중인 Apache Tomcat 서버는 사용자 인증을 위한 로�
     
 - **분석 및 조사**  
   채집된 정보는 Analysis VPC 내에서 분석된다.
+  - **EBS Volume 생성 및 마운트**  
+    침해사고가 발생한 EC2의 AMI에서 스냅샷을 이용해 EBS Volume으로 만들어 Analysis EC2에 마운트한다.
+    
+  - **아티팩트 분석**  
+    Volatility, Yara등 다양한 오픈소스를 이용해 아티팩트를 분석한다.
+    
+  - **분석 결과 S3에 전송**  
+    분석 결과를 txt파일로 만들어 S3에 전송한다.
+
+  
+  
   
 ## 참고자료  
 취약 서버 구축
