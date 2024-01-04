@@ -39,7 +39,7 @@
 **큐물러스**
 | 이름 | 한줄소개 |
 | --- | --- |
-| 신우빈 (PM) |  |
+| 신우빈 (PM) | 맥치킨 모짜렐라 |
 | [박선하](https://github.com/waaterr1208) | (활력 감소) |
 | [박천웅](https://github.com/CheonWoong-Park) | 어쩌다보니 노예 |
 | [박현재](https://github.com/park1NG) | "신뢰할 수 있는" |
