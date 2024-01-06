@@ -29,7 +29,7 @@ def lambda_handler(event, context):
         'export AWS_DEFAULT_REGION=ap-northeast-2',
         'sudo xfs_repair -L /dev/xvdb1',
         'sudo xfs_admin -U generate /dev/xvdb1',
-        'sudo mount /dev/xvdb1 /data',
+        'sudo mount -r /dev/xvdb1 /data',
         f'python3 /home/ec2-user/volatility3/analysis_software.py {instance} {time}',
         'sudo umount /dev/xvdb1'
     ]
