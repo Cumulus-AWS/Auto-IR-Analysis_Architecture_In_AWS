@@ -9,7 +9,7 @@
 3. AMI 마운트
 4. 분석 및 분석 결과 저장
 
-## 분석 환경 구성(?)
+## 분석 환경
 사용 도구 </br>
 Python 3.7.16 / 2.7.18 </br>
 Volatility3 </br>
@@ -22,6 +22,10 @@ S3에 분석에 필요한 도구들을 저장한 후 분석 EC2에서 도구들�
   <img src="../../Image/Get_Artifact.png" width="400" height="auto">
 </p>
 앞서 S3에 저장한 아티팩트를 분석하기 위해 분석 EC2로 가져온다.
+
+```bash
+  aws s3 cp s3://cumulus-forensic-artifacti-09a123a785ded16bc/2024-01-03_23:23:28/memory/lime파일 /home/ec2-user/volatility3/
+```
 
 
 ## AMI 연결
