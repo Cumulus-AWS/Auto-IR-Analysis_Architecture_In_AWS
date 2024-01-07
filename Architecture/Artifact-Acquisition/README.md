@@ -92,7 +92,7 @@ GuardDuty는 EC2에서 발생한 위협 뿐만 아니라 S3,Iam등 다양한 AWS
   <img src="../../Image/command.png" width="500" height="auto">
 </p>
 <p align="center">
-  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/Architecture/Artifact-Acquisition/2-Ec2-Exec-With-SSM.py">2-Ec2-Exec-With-SSM.py</a>
+  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/2-Ec2-Exec-With-SSM.py">2-Ec2-Exec-With-SSM.py</a>
 </p>
 
 비휘발성 아티팩트 채증을 위해 AMI를 저장한다.  
@@ -102,7 +102,7 @@ AMI는 EC2 운영체제, 설정 값, 디스크 스냅샷 등이 저장되어 있
   <img src="../../Image/AMI.png" width="500" height="auto">
 </p>
 <p align="center">
-  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/Architecture/Artifact-Acquisition/3-AMI-Snapshot.py">3-AMI-Snapshot.py</a>
+  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/3-AMI-Snapshot.py">3-AMI-Snapshot.py</a>
 </p>
 
 아티팩트들을 모두 수집한 이후에는 인 아웃바운드 트래픽을 차단하여, 2차 피해를 방지한다.  
@@ -121,7 +121,7 @@ AMI는 EC2 운영체제, 설정 값, 디스크 스냅샷 등이 저장되어 있
   격리후
 </p>
 <p align="center">
-  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/Architecture/Artifact-Acquisition/4-Change-Security-Group.py">4-Change-Security-Group.py</a>
+  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Acquisition/4-Change-Security-Group.py">4-Change-Security-Group.py</a>
 </p>
 
 이후, 분석 스텝펑션이 동작한다. 
