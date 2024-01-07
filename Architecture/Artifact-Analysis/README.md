@@ -15,6 +15,11 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 4. 분석 및 분석 결과 저장
 
 ## 분석 환경 구축
+
+## 분석 환경 구축
+<p align="center">
+  <img src="../../Image/Analysis_VPC.png" width="800" height="auto">
+</p>
 침해사고 AMI를 EBS volume으로 복원할때 2차 피해가 발생할 수 있기에, Analysis VPC는 격리된 환경이어야한다.  
 아래와 같이 S3 엔드포인트와 SSM엔드포인트 대역대를 제외하고 모든 아웃바운드 트래픽을 차단하였다.
 
