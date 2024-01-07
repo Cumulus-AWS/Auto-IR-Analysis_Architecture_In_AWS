@@ -20,9 +20,10 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 <p align="center">
   <img src="../../Image/Analysis_VPC.png" width="800" height="auto">
 </p>
+</br>
 침해사고 AMI를 EBS volume으로 복원할때 2차 피해가 발생할 수 있기에, Analysis VPC는 격리된 환경이어야한다.  
 아래와 같이 S3 엔드포인트와 SSM엔드포인트 대역대를 제외하고 모든 아웃바운드 트래픽을 차단하였다.
-
+</br>
 <p align="center">
   <img src="../../Image/analysis-sg.PNG" width="800" height="auto">
 </p>
