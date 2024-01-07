@@ -19,10 +19,10 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 아래와 같이 S3 엔드포인트와 SSM엔드포인트 대역대를 제외하고 모든 아웃바운드 트래픽을 차단하였다.
 
 <p align="center">
-  <img src="../../Image/analysis-sg.PNG" width="400" height="auto">
+  <img src="../../Image/analysis-sg.PNG" width="800" height="auto">
 </p>
 
-격리된 환경이기에, 분석 과정에 필요한 도구들은 미리 구축해 둔 퍼블릭 환경의 EC2에 다운받고, 이것의 AMI를 분석 EC2에 적용시키는 방법을 이용하였다.  
+격리된 환경이기에, 분석 과정에 필요한 도구들은 미리 구축해 둔 퍼블릭 환경의 EC2에 다운받고, 이것의 AMI를 분석 EC2에 적용시키는 방법을 이용하였다.
 이 방식을 통해, 분석에 필요한 새로운 도구를 다운받거나, 기존에 사용하던 도구를 업데이트 할 수 있다.
 
 
