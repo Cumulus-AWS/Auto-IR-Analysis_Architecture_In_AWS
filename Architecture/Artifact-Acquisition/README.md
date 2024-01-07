@@ -4,7 +4,11 @@
   <img src="../../Image/Automated_Validation.png" alt="분석 자동화 아키텍쳐" width="600" height="auto">
 </p>
 
-아티팩트 채증 자동화 부분
+## index
+1. [GuardDuty](#GuardDuty)
+1. [Event Bridge](#Event-Bridge)
+1. [StepFunction](#StepFunction)
+
 ## GuardDuty
 <p align="center">
   <img src="../../Image/guard-duty.png" width="300" height="auto">
