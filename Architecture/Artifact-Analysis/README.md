@@ -2,8 +2,6 @@
 <p align="center">
   <img src="../../Image/Automated_Analysis.png" alt="분석 자동화 아키텍쳐" width="600" height="auto">
 </p>
-OS </br>
-Linux ip-10-66-1-81.ap-northeast-2.compute.internal 5.10.199-190.747.amzn2.x86_64 #1 SMP Sat Nov 4 16:55:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
 사용 도구 </br>
 Python 3.7.16 </br>
@@ -17,7 +15,16 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 4. 분석 및 분석 결과 저장
 
 ## 분석 환경 구축
-분석 EC2는 침해 사고로부터 2차 피해를 최소화하기 위해 완전히 격리돤 환경이 팔요하다.  
+침해사고 AMI를 EBS volume으로 복원할때 2차 피해가 발생할 수 있기에, Analysis VPC는 격리된 환경이어야한다.  
+아래와 같이 S3 엔드포인트와 SSM엔드포인트 대역대를 제외하고 모든 아웃바운드 트래픽을 차단하였다.
+
+<p align="center">
+  <img src="../../Image/analysis-sg.PNG" width="400" height="auto">
+</p>
+
+격리된 환경이기에, 분석 과정에 필요한 도구들은 미리 구축해 둔 퍼블릭 환경의 EC2에 다운받고, 이것의 AMI를 분석 EC2에 적용시키는 방법을 이용하였다.  
+이 방식을 통해, 분석에 필요한 새로운 도구를 다운받거나, 기존에 사용하던 도구를 업데이트 할 수 있다.
+
 
 ## 채증파일 가져오기
 <p align="center">
