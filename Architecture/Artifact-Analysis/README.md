@@ -77,8 +77,21 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
   <img src="../../Image/Store_Result.png" width="400" height="auto">
 </p>
 연결된 볼륨을 분석하기 위해 마운트를 진행한다.
-마운트 이후 분석 프로그램인 analysis_software.py을 실행시켜 volatility와 lamda를 이용해 분석을 진행한 후 결과를 S3에 저장한다. 
+마운트 이후 분석 프로그램인 analysis_software.py을 실행시켜 volatility와 lamda를 이용해 분석을 진행한 후 결과를 S3에 저장한다.
+<p align="center">
+  <img src="../../Image/Analysis_Result_S3.png" width="400" height="auto">
+</p>
 
 <p align="center">
   <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Analysis/1-Analysis-start.py">1-Analysis-start.py</a>
+</p>
+
+분석 결과는 다음과 같다.
+<p align="center">
+  <img src="../../Image/Analysis_Result.png" width="400" height="auto">
+</p>
+
+이 부분은 result.txt 파일 내용의 일부분이다. Volatility3 를 통해 분석한 서버에 실행된 명령어 히스토리이며 최종적으로 공격자가 ReverseShell 공격을 시도한 것을 확인할 수 있다.
+<p align="center">
+  <img src="../../Image/Analysis_Result_History.png" width="400" height="auto">
 </p>
