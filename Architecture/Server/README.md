@@ -1,4 +1,9 @@
 # Server 환경 구축
+
+<p align="center">
+  <img src="../../Image/server_vpc.png" alt="분석 자동화 아키텍쳐" width="400" height="auto">
+</p>
+
 ## index
 1. [보안 시스템 구축](#보안-시스템-구축)
 1. [취약 환경 구성](#취약-환경-구성)
