@@ -24,16 +24,43 @@ S3에 분석에 필요한 도구들을 저장한 후 분석 EC2에서 도구들�
 앞서 S3에 저장한 아티팩트를 분석하기 위해 분석 EC2로 가져온다.
 
 
-## AMI 마운트
+## AMI 연결
 <p align="center">
   <img src="../../Image/Attach_AMI.png" width="400" height="auto">
 </p>
 앞서 생성한 AMI를 분석하기 위해 EC2에 연결한다.
-
 이때 수집한 AMI의 무결성을 보존하기 위해 스냅샷을 이용하여 EBS 볼륨을 생성한다.
+<p align="center">
+  <img src="../../Image/Created_AMI.png" width="400" height="auto">
+</p>
+<p align="center">
+  AMI
+</p>
+<p align="center">
+  <img src="../../Image/Created_Snapshot.png" width="400" height="auto">
+</p>
+<p align="center">
+  스냅샷
+</p>
+<p align="center">
+  <img src="../../Image/Created_Volume.png" width="400" height="auto">
+</p>
+<p align="center">
+  EBS 볼륨
+</p>
+생성된 EBS 볼륨을 EC2에 연결한다.
+<p align="center">
+  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Analysis/0-Create-EC2.py">0-Create-EC2.py</a>
+</p>
 
 
 ## 분석 및 분석 결과 저장
 <p align="center">
   <img src="../../Image/Store_Result.png" width="400" height="auto">
+</p>
+연결된 볼륨을 분석하기 위해 마운트를 진행한다.
+마운트 이후 분석 프로그램인 analysis_software.py을 실행시켜 volatility와 lamda를 이용해 분석을 진행한 후 결과를 S3에 저장한다. 
+
+<p align="center">
+  <a href="https://github.com/Cumulus-AWS/Auto-IR-Analysis_Architecture_In_AWS/blob/main/Architecture/Artifact-Analysis/1-Analysis-start.py">1-Analysis-start.py</a>
 </p>
