@@ -2,6 +2,13 @@
 <p align="center">
   <img src="../../Image/Automated_Analysis.png" alt="분석 자동화 아키텍쳐" width="600" height="auto">
 </p>
+OS </br>
+Linux ip-10-66-1-81.ap-northeast-2.compute.internal 5.10.199-190.747.amzn2.x86_64 #1 SMP Sat Nov 4 16:55:14 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+사용 도구 </br>
+Python 3.7.16 </br>
+Volatility3 </br>
+Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 
 ## index
 1. 분석 환경 구성
@@ -9,13 +16,8 @@
 3. AMI 마운트
 4. 분석 및 분석 결과 저장
 
-## 분석 환경
-사용 도구 </br>
-Python 3.7.16 / 2.7.18 </br>
-Volatility3 </br>
-Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
-
-S3에 분석에 필요한 도구들을 저장한 후 분석 EC2에서 도구들을 설치한다.
+## 분석 환경 구축
+분석 EC2는 침해 사고로부터 2차 피해를 최소화하기 위해 완전히 격리돤 환경이 팔요하다.  
 
 ## 채증파일 가져오기
 <p align="center">
@@ -24,7 +26,7 @@ S3에 분석에 필요한 도구들을 저장한 후 분석 EC2에서 도구들�
 채증 과정에서 생성된 아티팩트를 분석하기 위해 S3에서 분석 EC2로 가져온다.
 
 ```bash
-  aws s3 cp s3://cumulus-forensic-artifacti-09a123a785ded16bc/2024-01-03_23:23:28/memory/lime파일 /home/ec2-user/volatility3/
+  aws s3 cp s3://cumulus-forensic-artifacti-09a123a785ded16bc/2024-01-03_23:23:28/memory/~lime파일 /home/ec2-user/volatility3/
 ```
 
 
