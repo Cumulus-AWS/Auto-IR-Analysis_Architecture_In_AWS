@@ -8,7 +8,8 @@
 <p align="center">
   <img src="../../Image/Server_VPC_Resource_Map.png" width="600" height="auto">
 </p>
-Server_vpc는 2개의 private subnet과 public subnet으로 구성된다. Private Subnet에는 Server EC2가 존재하고 EC2는 Private Subnet 내에서 오토스케일링된다. Private Subnet은 라우팅 테이블을 통해서 외부에서 직접적인 접근이 불가능하게 설정한다.Public Subnet에는 내부에서 EC2로 접근할 수 있는 Bastion Host가 존재하고 ALB를 통해서 인터넷과 연결된다.  
+Server_vpc는 2개의 private subnet과 public subnet으로 구성된다. Private Subnet에는 Server EC2가 존재하고 EC2는 Private Subnet 내에서 오토스케일링된다. Private Subnet은 라우팅 테이블을 통해서 외부에서 직접적인 접근이 불가능하게 설정한다. Public Subnet에는 내부에서 EC2로 접근할 수 있는 Bastion Host가 존재하고 ALB를 통해서 인터넷과 연결된다.
+<br></br>
 트래픽은 InternetGW를 통해서 외부에서 들어온다. 트래픽은 ALB로 전달되고 ALB에서 Public Subnet을 거쳐 Private Subnet의 Server EC2에 요청을 보낸다. 보안그룹을 통해 포트 필터링을 거친 뒤, 요청을 받은 EC2는 NAT Gateway를 통해 아웃바운드 트래픽으로 요청의 결과를 전송한다.
 <br></br>
 
