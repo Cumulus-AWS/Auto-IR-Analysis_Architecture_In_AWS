@@ -4,7 +4,7 @@
 1. 취약 환경 구성
 
 ## 보안 시스템 구축
-**1. 트래픽 전송 과정**  
+**1. 단방향 트래픽**  
 <p align="center">
   <img src="../../Image/Server_VPC_Resource_Map.png" width="600" height="auto">
 </p>
