@@ -15,8 +15,6 @@ Yara 4.1.3 (https://github.com/VirusTotal/yara-python) </br>
 4. 분석 및 분석 결과 저장
 
 ## 분석 환경 구축
-
-## 분석 환경 구축
 <p align="center">
   <img src="../../Image/Analysis_VPC_Resource_Map.png" width="800" height="auto">
 </p>
